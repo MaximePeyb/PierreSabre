@@ -25,7 +25,7 @@ public class Humain {
 	}
 
 
-	private void parler(String txt) {
+	protected void parler(String txt) {
 		System.out.println("("+this.nom+")" + " - "+txt);
 	}
 
