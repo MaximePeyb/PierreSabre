@@ -8,17 +8,11 @@ public class Commercant extends Humain {
 	
 	public int seFaireExtorquer() {
 		parler("J’ai tout perdu! Le monde est trop injuste...");
-		return getArgent();
+		return argent;
 	}
 	
 	public void recevoir(int argent) {
 		gagnerArgent(argent);
 		parler(argent +" sous ! Je te remercie généreux donateur!");
 	}
-	
-
-	public static void main(String[] args) {
-
-	}
-
 }
