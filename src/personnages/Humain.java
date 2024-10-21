@@ -5,6 +5,12 @@ public class Humain {
 	private String boissonFav; 
 	private int argent;
 	
+	public Humain(String pfnom, String pfBoisson, int pfargent) {
+		nom = pfnom;
+		boissonFav = pfBoisson;
+		argent = pfargent;
+	}
+	
 	
 	public String getNom() {
 		return nom;
@@ -32,7 +38,13 @@ public class Humain {
 	}
 	
 	public void acheter(String bien, int prix) {
-		
+		if(argent>=prix) {
+			parler("J'ai "+argent+" sous en poche. Je vais pouvoir m'offrir un "+bien+" à "+prix+" sous.");
+			perdreArgent(prix);
+		}
+		else {
+			parler("Je n'ai plus que "+argent+" sous en poche. Je ne peux même pas m'offrir un "+bien+" à "+prix+" sous.");
+		}
 	}
 	
 	public void gagnerArgent(int gain) {
