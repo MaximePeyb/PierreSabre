@@ -69,7 +69,7 @@ public class Humain {
 		memoriser(newH);
 	}
 
-	private void memoriser(Humain newH){
+	protected void memoriser(Humain newH){
 		if (nbConnaissances<memoire.length){
 			memoire[nbConnaissances] = newH;
 			nbConnaissances++;

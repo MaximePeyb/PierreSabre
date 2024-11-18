@@ -1,6 +1,7 @@
 package histoire;
 
 import personnages.Commercant;
+import personnages.GrandMere;
 import personnages.Ronin;
 import personnages.Samourai;
 import personnages.Traitre;
@@ -30,15 +31,25 @@ public class HistoireTP5 {
 		Commercant chonin = new Commercant("Chonin", 40);
 		Commercant kumi = new Commercant("Kumi", 10);
 		Yakuza yaku = new Yakuza("Yaku Le Noir", "whisky", 30, "Warsong");
+		Samourai akimoto = new Samourai("Miyamoto","Akimoto", "saké", 80);
 
-		masako.faireLeGentil();
-		masako.ranconner(kumi);
-		masako.ranconner(chonin);
-		masako.ranconner(marco);
-		masako.ranconner(marco);
-		masako.faireConnaissanceAvec(yaku);
-		masako.faireLeGentil();
-		masako.direBonjour();
+//		masako.faireLeGentil();
+//		masako.ranconner(kumi);
+//		masako.ranconner(chonin);
+//		masako.ranconner(marco);
+//		masako.ranconner(marco);
+//		masako.faireConnaissanceAvec(yaku);
+//		masako.faireLeGentil();
+//		masako.direBonjour();
+		
+		GrandMere grandMere = new GrandMere("Grand-Mère", 10); 
+		grandMere.faireConnaissanceAvec(akimoto);
+		grandMere.faireConnaissanceAvec(yaku);
+		grandMere.faireConnaissanceAvec(masako); 
+		grandMere.faireConnaissanceAvec(kumi);
+		grandMere.faireConnaissanceAvec(marco); 
+		grandMere.faireConnaissanceAvec(chonin);
+		grandMere.ragoter();
 
 	}
 }
