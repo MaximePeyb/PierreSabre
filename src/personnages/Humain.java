@@ -89,7 +89,7 @@ public class Humain {
 		String txt ="Je connais beaucoup de monde dont : ";
 		for (int i=0;i<memoire.length;i++){
 			if(memoire[i]!=null){
-				txt = txt.concat(memoire[i].getNom() + "  ");
+				txt = txt.concat(memoire[i].getNom() + "   ");
 			}
 		}
 		parler(txt);
