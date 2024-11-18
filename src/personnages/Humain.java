@@ -4,11 +4,17 @@ public class Humain {
 	private String nom;
 	private String boissonFav; 
 	private int argent;
+	private int nbConnaissances = 0;
+	private Humain[] memoire = new Humain[30];
+	
 	
 	public Humain(String pfnom, String pfBoisson, int pfargent) {
 		nom = pfnom;
 		boissonFav = pfBoisson;
 		argent = pfargent;
+		for (int i=0;i<memoire.length; i++){
+			memoire[i]=null;
+		}
 	}
 	
 	
@@ -54,8 +60,42 @@ public class Humain {
 	protected void perdreArgent(int perte) {
 		argent-=perte;
 	}
+	
+	
+	
+	public void faireConnaissanceAvec(Humain newH){
+		direBonjour();
+		newH.repondre(this);
+		memoriser(newH);
+	}
+
+	private void memoriser(Humain newH){
+		if (nbConnaissances<memoire.length){
+			memoire[nbConnaissances] = newH;
+			nbConnaissances++;
+		} else{
+			nbConnaissances = 0;
+			memoriser(newH);
+		}
+	}
+
+	private void repondre(Humain qqun){
+		direBonjour();
+		memoriser(qqun);
+	}
 
 
+	public void listerConnaissance(){
+		String txt ="Je connais beaucoup de monde dont : ";
+		for (int i=0;i<memoire.length;i++){
+			if(memoire[i]!=null){
+				txt = txt.concat(memoire[i].getNom() + "  ");
+			}
+		}
+		parler(txt);
+	}
+	
+	
 	public static void main(String[] args) {
 		
 	}
