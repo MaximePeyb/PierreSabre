@@ -4,8 +4,8 @@ public class Humain {
 	private String nom;
 	private String boissonFav; 
 	private int argent;
-	private int nbConnaissances = 0;
-	private Humain[] memoire = new Humain[30];
+	protected int nbConnaissances = 0;
+	protected Humain[] memoire = new Humain[30];
 	
 	
 	public Humain(String pfnom, String pfBoisson, int pfargent) {
